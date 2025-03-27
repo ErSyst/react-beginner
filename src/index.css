@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+
+body {
+  background-color: #f3e7e9;
+}
+
+* {
+  font-family: "Inter", system-ui !important;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+.App {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  width: 400px;
+  margin: 100px auto;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 15px;
+}
+
+/* Блок для ввода валюты */
+.block {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.block input {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: 2.5rem;
+  font-weight: bold;
+  padding: 15px 20px;
+  letter-spacing: 1.2px;
+  outline: none;
+  border-radius: 8px;
+  width: 100%;
+  text-align: left;
+  background: rgba(240, 240, 240, 0.8);
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  background: rgba(220, 220, 220, 0.9);
+}
+
+/* Блок валют */
+.currencies {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  background: rgba(230, 230, 230, 0.6);
+}
+
+.currencies li {
+  display: inline-flex;
+  padding: 8px 15px;
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  justify-content: center;
+  flex: 1;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  color: #555;
+}
+
+.currencies li:hover {
+  background-color: rgba(200, 200, 200, 0.3);
+}
+
+.currencies li:active {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.currencies .active {
+  background-color: #16b67f;
+  color: #fff;
+}
+
+/* Кнопка со стрелкой */
+.currencies li:last-of-type {
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 40px;
+  border-right: 0;
+}
+
+.currencies li:last-of-type svg {
+  width: 14px;
+  height: 14px;
+  fill: #666;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.currencies li:last-of-type:hover svg {
+  transform: rotate(180deg);
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+/* Анимация для спиннера */
+.spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 2s linear infinite;
+}
+
+/* Анимация вращения */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
